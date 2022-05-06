@@ -17,8 +17,6 @@ const authProtectedRoutes = [
   },
 ];
 
-const publicRoutes = [
-  // Authentication Page
-];
+const publicRoutes = [];
 
 export { authProtectedRoutes, publicRoutes };
