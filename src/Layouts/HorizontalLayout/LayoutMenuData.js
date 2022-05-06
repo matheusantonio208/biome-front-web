@@ -73,7 +73,7 @@ const Navdata = () => {
         {
           id: 'mailbox',
           label: 'Mensal',
-          link: '/apps-mailbox',
+          link: '/pages-starter',
           parentId: 'apps',
         },
         {
@@ -91,13 +91,13 @@ const Navdata = () => {
             {
               id: 1,
               label: 'Products',
-              link: '/apps-ecommerce-products',
+              link: '/pages-starter',
               parentId: 'apps',
             },
             {
               id: 2,
               label: 'Product Details',
-              link: '/apps-ecommerce-product-details',
+              link: '/pages-starter',
               parentId: 'apps',
             },
           ],
