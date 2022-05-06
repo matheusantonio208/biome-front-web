@@ -59,7 +59,7 @@ const Navdata = () => {
     },
     {
       id: 'apps',
-      label: 'Apps',
+      label: 'Relatório',
       icon: <FeatherIcon icon='grid' className='icon-dual' />,
       link: '/#',
       click: function (e) {
@@ -72,7 +72,7 @@ const Navdata = () => {
       subItems: [
         {
           id: 'mailbox',
-          label: 'Mailbox',
+          label: 'Mensal',
           link: '/apps-mailbox',
           parentId: 'apps',
         },
