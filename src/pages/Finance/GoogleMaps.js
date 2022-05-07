@@ -13,7 +13,6 @@ const mapStyles = {
 const LoadingContainer = () => <div>Loading...</div>;
 
 const GoogleMaps = (props) => {
-  document.title = 'Google Maps | Velzon - React Admin & Dashboard Template';
   return (
     <Card>
       <CardHeader>

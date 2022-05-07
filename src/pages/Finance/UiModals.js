@@ -20,7 +20,6 @@ const UiModals = () => {
     setmodal_grid(!modal_grid);
   }
 
-  document.title = 'Modals | Velzon - React Admin & Dashboard Template';
   return (
     <React.Fragment>
       <Col lg={12}>

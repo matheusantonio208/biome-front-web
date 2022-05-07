@@ -14,11 +14,7 @@ import BasicPasswReset from '../pages/Authentication/ForgetPassword';
 
 const authProtectedRoutes = [
   //Pages
-  { path: '/finance', component: FinanceDashboard },
-  { path: '/login', component: BasicSignIn },
-  { path: '/register', component: BasicSignUp },
-  { path: '/passwordReset', component: BasicPasswReset },
-  { path: '/labs', component: Modal },
+  { path: '/dashboard/finance', component: FinanceDashboard },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
@@ -29,6 +25,11 @@ const authProtectedRoutes = [
   },
 ];
 
-const publicRoutes = [];
+const publicRoutes = [
+  { path: '/login', component: BasicSignIn },
+  { path: '/register', component: BasicSignUp },
+  { path: '/forgot-password', component: BasicPasswReset },
+  { path: '/labs', component: Modal },
+];
 
 export { authProtectedRoutes, publicRoutes };

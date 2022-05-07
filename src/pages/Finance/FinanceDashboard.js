@@ -17,7 +17,7 @@ const Finance = () => {
   return (
     <React.Fragment>
       <div className='page-content'>
-        <BreadCrumb title='Finance' pageTitle='Pages' />
+        <BreadCrumb title='Finance' pageTitle='Dashboard' />
         <Container fluid>
           <Row>
             <Col xs={12}>

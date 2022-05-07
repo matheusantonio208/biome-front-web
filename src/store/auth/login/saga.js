@@ -1,44 +1,31 @@
-import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 
 // Login Redux States
-import { LOGIN_USER, LOGOUT_USER, SOCIAL_LOGIN } from "./actionTypes";
-import { apiError, loginSuccess, logoutUserSuccess } from "./actions";
+import { LOGIN_USER, LOGOUT_USER, SOCIAL_LOGIN } from './actionTypes';
+import { apiError, loginSuccess, logoutUserSuccess } from './actions';
 
 //Include Both Helper File with needed methods
-import { getFirebaseBackend } from "../../../helpers/firebase_helper";
+import { getFirebaseBackend } from '../../../helpers/firebase_helper';
 import {
   postFakeLogin,
   postJwtLogin,
   postSocialLogin,
-} from "../../../helpers/fakebackend_helper";
+} from '../../../helpers/fakebackend_helper';
+
+import api from '../../../services/axios';
 
 const fireBaseBackend = getFirebaseBackend();
 
 function* loginUser({ payload: { user, history } }) {
   try {
-    if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-      const response = yield call(
-        fireBaseBackend.loginUser,
-        user.email,
-        user.password
-      );
-      yield put(loginSuccess(response));
-    } else if (process.env.REACT_APP_DEFAULTAUTH === "jwt") {
-      const response = yield call(postJwtLogin, {
-        email: user.email,
-        password: user.password,
-      });
-      localStorage.setItem("authUser", JSON.stringify(response));
-      yield put(loginSuccess(response));
-    } else if (process.env.REACT_APP_DEFAULTAUTH === "fake") {
-      const response = yield call(postFakeLogin, {
-        email: user.email,
-        password: user.password,
-      });
-      localStorage.setItem("authUser", JSON.stringify(response));
-      yield put(loginSuccess(response));
-    }
-    history.push("/dashboard");
+    const response = yield call(api.post, '/session/login', {
+      email: user.email,
+      password_hash: user.password,
+    });
+    console.log({ response });
+    localStorage.setItem('authUser', JSON.stringify(response));
+    yield put(loginSuccess(response));
+    history.push('/finance');
   } catch (error) {
     yield put(apiError(error));
   }
@@ -46,8 +33,8 @@ function* loginUser({ payload: { user, history } }) {
 
 function* logoutUser() {
   try {
-    localStorage.removeItem("authUser");
-    if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
+    localStorage.removeItem('authUser');
+    if (process.env.REACT_APP_DEFAULTAUTH === 'firebase') {
       const response = yield call(fireBaseBackend.logout);
       yield put(logoutUserSuccess(LOGOUT_USER, response));
     } else {
@@ -60,21 +47,17 @@ function* logoutUser() {
 
 function* socialLogin({ payload: { data, history, type } }) {
   try {
-    if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
+    if (process.env.REACT_APP_DEFAULTAUTH === 'firebase') {
       const fireBaseBackend = getFirebaseBackend();
-      const response = yield call(
-        fireBaseBackend.socialLoginUser,
-        data,
-        type,
-      );
-      localStorage.setItem("authUser", JSON.stringify(response));
+      const response = yield call(fireBaseBackend.socialLoginUser, data, type);
+      localStorage.setItem('authUser', JSON.stringify(response));
       yield put(loginSuccess(response));
     } else {
       const response = yield call(postSocialLogin, data);
-      localStorage.setItem("authUser", JSON.stringify(response));
+      localStorage.setItem('authUser', JSON.stringify(response));
       yield put(loginSuccess(response));
     }
-    history.push("/dashboard");
+    history.push('/dashboard');
   } catch (error) {
     yield put(apiError(error));
   }
