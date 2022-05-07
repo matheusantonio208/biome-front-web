@@ -4,19 +4,21 @@ import BreadCrumb from '../../Components/Common/BreadCrumb';
 import Widgets from './Widgets';
 import Widgets1 from './Widgets1';
 import MyCurrencies from './MyCurrencies';
-import MarketGraph from './MarketGraph';
+import AverageExpensesGraph from './AverageExpensesGraph';
 import GoogleMaps from './GoogleMaps';
 // import Calender from './Calendar';
 import MyFinancePillars from './MyFinancePillars';
 import RecentActivity from './RecentActivity';
 import Calender from './Calendar';
+import Widgets2 from './Widgets2';
+
 const Finance = () => {
   document.title = 'Finance | BioME';
   return (
     <React.Fragment>
       <div className='page-content'>
+        <BreadCrumb title='Finance' pageTitle='Pages' />
         <Container fluid>
-          <BreadCrumb title='Finance' pageTitle='Pages' />
           <Row>
             <Col xs={12}>
               <Row>
@@ -24,9 +26,9 @@ const Finance = () => {
                 <Col className='col-xxl-9 order-xxl-0 order-first'>
                   <div className='d-flex flex-column h-100'>
                     <Row className='h-100'>
-                      <Widgets />
+                      <Widgets2 />
                     </Row>
-                    <MarketGraph />
+                    <AverageExpensesGraph />
                   </div>
                 </Col>
               </Row>

@@ -46,7 +46,7 @@ const RecentActivity = () => {
         </div>
       </CardHeader>
       <CardBody className='p-0'>
-        <SimpleBar style={{ height: '390px' }}>
+        <SimpleBar>
           <div className='p-3'>
             <h6 className='text-muted text-uppercase mb-3 fs-11'>
               25 Dec 2021

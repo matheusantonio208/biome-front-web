@@ -565,7 +565,7 @@ const BasicBarChart = () => {
     textStyle: {
       fontFamily: 'Poppins, sans-serif',
     },
-    color: ['#733380'],
+    color: ['#38d2f5'],
     series: [
       {
         data: [120, 200, 150, 80, 70, 110, 130],

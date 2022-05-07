@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+import React, { useState } from 'react';
+import { Card, CardBody } from 'reactstrap';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
 import BootstrapTheme from '@fullcalendar/bootstrap';
-
-import FullCalendar from '@fullcalendar/react'; // must go before plugins
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
 const Calender = () => {
   const [event, setEvent] = useState({});
   const [selectedNewDay, setSelectedNewDay] = useState(0);
@@ -112,23 +112,27 @@ const Calender = () => {
     document.getElementById('btn-save-event').removeAttribute('hidden');
   };
   return (
-    <FullCalendar
-      plugins={[BootstrapTheme, dayGridPlugin, interactionPlugin]}
-      initialView='dayGridMonth'
-      handleWindowResize={true}
-      themeSystem='bootstrap'
-      slotDuration={'00:15:00'}
-      headerToolbar={{
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,dayGridWeek,dayGridDay',
-      }}
-      droppable={true}
-      selectable={true}
-      eventClick={handleEventClick}
-      dateClick={handleDateClick}
-      editable={true}
-    />
+    <Card>
+      <CardBody>
+        <FullCalendar
+          plugins={[BootstrapTheme, interactionPlugin, dayGridPlugin]}
+          initialView='dayGridMonth'
+          handleWindowResize={true}
+          themeSystem='bootstrap'
+          slotDuration={'00:15:00'}
+          headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,dayGridWeek,dayGridDay',
+          }}
+          droppable={true}
+          selectable={true}
+          eventClick={handleEventClick}
+          dateClick={handleDateClick}
+          editable={true}
+        />
+      </CardBody>
+    </Card>
   );
 };
 

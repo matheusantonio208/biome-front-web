@@ -9,7 +9,7 @@ const MarketGraph = () => {
         <Col xl={12}>
           <Card>
             <CardHeader className='border-0 align-items-center d-flex'>
-              <h4 className='card-title mb-0 flex-grow-1'>Market Graph</h4>
+              <h4 className='card-title mb-0 flex-grow-1'>Média de Gastos</h4>
               <div className='d-flex gap-1'>
                 <button type='button' className='btn btn-soft-secondary btn-sm'>
                   Semana

@@ -17,7 +17,7 @@ const GoogleMaps = (props) => {
   return (
     <Card>
       <CardHeader>
-        <h4 className='card-title mb-0'>Markers</h4>
+        <h4 className='card-title mb-0'>Locais de Compra</h4>
       </CardHeader>
       <CardBody>
         <div
