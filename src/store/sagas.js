@@ -4,11 +4,15 @@ import LayoutSaga from './layouts/saga';
 //Auth
 import AccountSaga from './auth/register/saga';
 import AuthSaga from './auth/login/saga';
-import ForgetSaga from './auth/forgetpwd/saga';
+import ForgetSaga from './auth/forget-password/saga';
 import ProfileSaga from './auth/profile/saga';
 
 //calendar
 import calendarSaga from './calendar/saga';
+
+//Modules
+import financeSaga from './finance/financeModal/saga';
+
 // //chat
 // import chatSaga from "./chat/saga";
 // //ecommerce
@@ -37,6 +41,7 @@ export default function* rootSaga() {
     fork(AccountSaga),
     fork(AuthSaga),
     fork(ForgetSaga),
+    fork(financeSaga),
     fork(ProfileSaga),
     fork(calendarSaga),
   ]);

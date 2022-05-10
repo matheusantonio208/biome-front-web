@@ -12,16 +12,25 @@ const MarketGraph = () => {
               <h4 className='card-title mb-0 flex-grow-1'>Média de Gastos</h4>
               <div className='d-flex gap-1'>
                 <button type='button' className='btn btn-soft-secondary btn-sm'>
-                  Semana
+                  Corpo
                 </button>
                 <button type='button' className='btn btn-soft-secondary btn-sm'>
-                  Mês
+                  Mente
                 </button>
                 <button type='button' className='btn btn-soft-secondary btn-sm'>
-                  Semestre
+                  Espírito
                 </button>
                 <button type='button' className='btn btn-soft-secondary btn-sm'>
-                  Anual
+                  Relacionamento
+                </button>
+                <button type='button' className='btn btn-soft-secondary btn-sm'>
+                  Profissional
+                </button>
+                <button type='button' className='btn btn-soft-secondary btn-sm'>
+                  Financeiro
+                </button>
+                <button type='button' className='btn btn-soft-secondary btn-sm'>
+                  Lazer
                 </button>
                 <button type='button' className='btn btn-soft-primary btn-sm'>
                   Tudo

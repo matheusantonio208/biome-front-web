@@ -485,8 +485,12 @@ const SimpleRadar = ({ dataColors }) => {
   var chartRadarBasicColors = getChartColorsArray(dataColors);
   const series = [
     {
-      name: 'Series 1',
+      name: 'Atual',
       data: [80, 50, 30, 40, 100, 20, 90, 90],
+    },
+    {
+      name: 'Planejado',
+      data: [75, 150, 40, 30, 100, 12, 85, 75],
     },
   ];
   var options = {

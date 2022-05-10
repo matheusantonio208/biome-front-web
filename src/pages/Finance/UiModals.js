@@ -41,7 +41,7 @@ const UiModals = () => {
         }}
       >
         <ModalHeader>
-          Grid Modals
+          Adicionar
           <Button
             type='button'
             onClick={() => {

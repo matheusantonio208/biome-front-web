@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import RightSidebar from '../../Components/Common/RightSidebar';
+import ActionsButtons from '../../Components/Common/ActionsButtons';
 
 //import actions
 import {
@@ -114,7 +114,7 @@ const Layout = (props) => {
           <Footer />
         </div>
       </div>
-      <RightSidebar />
+      <ActionsButtons />
     </React.Fragment>
   );
 };
